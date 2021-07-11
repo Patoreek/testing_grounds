@@ -18,7 +18,6 @@ const TestingGround = () => {
     }
   }
 
-  const amount = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <div>
       <VisibilitySensor onChange={onChange}>
@@ -28,6 +27,11 @@ const TestingGround = () => {
             playing={playVideo}
             muted
             onBuffer={() => bufferHandler()}
+            config={{
+              vimeo: {
+                playerOptions: { autopause: true, controls: true },
+              },
+            }}
           />
         </div>
       </VisibilitySensor>
